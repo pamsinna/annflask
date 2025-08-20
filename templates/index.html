@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>好運貓貓降臨</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .cats {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 30px 0;
+      flex-wrap: nowrap;       
+      overflow-x: auto;        
+      padding-bottom: 10px;    
+    }
+
+    .cat {
+      border: 2px solid #ddd;
+      border-radius: 10px;
+      padding: 15px;
+      width: 120px;
+      background-color: #f9f9f9;
+      flex: 0 0 auto;          
+    }
+
+    .cat-image {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 10px;
+      object-fit: contain;
+    }
+
+    .cat-name {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .cat-meaning {
+      font-size: 12px;
+      color: #666;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 20px;
+    }
+
+
+    .result {
+      margin: 30px 0;
+      padding: 20px;
+      border: 2px solid #28a745;
+      border-radius: 10px;
+      background-color: #d4edda;
+      display: none;
+    }
+
+    .result h2 {
+      color: #155724;
+      margin-bottom: 10px;
+    }
+
+    
+  </style>
+</head>
+<body>
+  <h1>好運貓貓降臨</h1>
+
+  <div class="cats" id="cats">
+    <div class="cat">
+      <img src="{{ url_for('static', filename='images/white_cat.jpg') }}" alt="白貓" class="cat-image" />
+      <div class="cat-name">白貓</div>
+      <div class="cat-meaning">來福招福</div>
+    </div>
+    <div class="cat">
+      <img src="{{ url_for('static', filename='images/red_cat.jpg') }}" alt="赤貓" class="cat-image" />
+      <div class="cat-name">赤貓</div>
+      <div class="cat-meaning">病除招福</div>
+    </div>
+    <div class="cat">
+      <img src="{{ url_for('static', filename='images/black_cat.jpg') }}" alt="黑貓" class="cat-image" />
+      <div class="cat-name">黑貓</div>
+      <div class="cat-meaning">厄除招福</div>
+    </div>
+    <div class="cat">
+      <img src="{{ url_for('static', filename='images/pink_cat.jpg') }}" alt="櫻花貓" class="cat-image" />
+      <div class="cat-name">櫻花貓</div>
+      <div class="cat-meaning">恋愛招福</div>
+    </div>
+    <div class="cat">
+      <img src="{{ url_for('static', filename='images/blue_cat.jpg') }}" alt="青貓" class="cat-image" />
+      <div class="cat-name">青貓</div>
+      <div class="cat-meaning">安全招福</div>
+    </div>
+  </div>
+
+  <button onclick="startDraw()" id="drawBtn">開始抽獎</button>
+
+  <div class="result" id="result">
+    <h2>恭喜你抽到：</h2>
+    <div id="resultCat"></div>
+    <div id="resultMeaning"></div>
+  </div>
+
+ 
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
+
